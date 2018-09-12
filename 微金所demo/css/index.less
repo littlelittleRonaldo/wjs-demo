@@ -1,0 +1,340 @@
+@baseColor:#e92322;
+// 头部
+.wjs_header {
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #ccc;
+    .row {
+        height: 100%;
+        div:nth-of-type(-n+3) {
+            border-right: 1px solid #ccc;
+        }
+        .wjs_code{
+            display: block;
+            position: relative;
+            img {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 49px;
+                border: 1px solid #ccc;
+                border-top: none;
+                display: none;
+            }
+            &:hover img{
+                display: block;
+                z-index: 999;
+            }
+        }
+        div:last-child {
+            > .btn-danger {
+                background-color: @baseColor;
+                border-color: @baseColor;
+            }
+            > .btn {
+                padding: 3px 15px;
+            }
+            > .btn-link {
+                color: #333;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+// 导航栏
+.wjs_nav {
+    // border-bottom: none;
+    margin-bottom: 0;
+    .navbar-toggle {
+        margin-top: 23px;
+    }
+   .navbar-brand {
+       line-height: 50px;
+       height: 80px;
+       .wjs_icon {
+           font-size: 40px;
+       }
+       .wjs_icon_logo {
+           color: @baseColor;
+       }
+       .wjs_icon_text {
+           color: #333;
+       }
+   }
+   .navbar-nav {
+       > li {
+           > a {
+               line-height: 50px;
+               font-size: 16px;
+           }
+           &.active,.active:hover {
+                border-bottom: 3px solid @baseColor;
+            a,a:hover {
+                background-color: transparent;
+            }
+           }
+           &:hover {
+                border-bottom: 3px solid @baseColor;
+           }
+       }
+   }
+}
+// 轮播图
+.wjs_banner {
+    .mobileImg {
+        width: 100%;
+        display: block;
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+    .pcImg {
+        height: 410px;
+        width: 100%;
+        display: block;
+        background-position: center center;
+        background-size: cover;
+    }
+}
+// 信息块
+.wjs_info {
+    padding: 30px;
+    .wjs_icon {
+        font-size: 30px;
+    }
+    .row {
+        > div {
+            margin-top: 20px;
+            a:hover {
+                color: @baseColor;
+            }
+        }
+    }
+}
+// 预约块
+.wjs_reverse {
+    height: 60px;
+    line-height: 60px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    .wjs_icon {
+        font-size: 18px;
+    }
+    .reverse_now {
+        color: @baseColor;
+        border-bottom: 1px dashed @baseColor;
+    }
+    a:hover {
+        color: @baseColor;
+    }
+}
+// 产品块
+.wjs_product {
+    clear: both;
+    background-color: #eee;
+    padding: 20px;
+    .nav_parent {
+        width: 100%;
+        overflow: hidden;
+    }
+    .nav-tabs {
+        li {
+            padding: 0 14px;
+            a {
+                background-color: transparent;
+                line-height: 50px;
+                border: 0;
+            }
+            &.active {
+                a,a:hover,a:focus {
+                    background-color: transparent;
+                    border: 0;
+                    border-bottom: 3px solid @baseColor;
+                }
+            }
+            a:hover {
+                border-bottom: 3px solid @baseColor;
+            }
+        }
+    }
+    .tab-content {
+        .wjs_box {
+            margin-top: 20px;
+            position: relative;
+            background-color: #fff;
+            .box_left {
+                margin-right: 100px;
+                padding-top: 10px;
+                height: 150px;
+                .row {
+                    margin-left: -10px;
+                    margin-right: -10px;
+                    font-size: 12px;
+                    div:nth-child(2n) {
+                        font-size: 12px;
+                        text-align: right;
+                    }
+                }
+                > p {
+                    text-align: center;
+                    font-size: 16px;
+                }
+            }
+            .box_right {
+                width: 100px;
+                height: 150px;
+                position: absolute;
+                right: 0;
+                top: 0;
+                text-align: center;
+                padding-top: 30px;  
+                border-left: 1px dashed #ccc;
+                .wjs_tip {
+                    width: 100%;
+                    position: absolute;
+                    left: 50%;
+                    top: 20px;
+                    transform: translateX(-50%);
+                    > span {
+                        cursor: pointer;
+                    }
+                    > span:first-child {
+                        border: 1px solid @baseColor;
+                        color: @baseColor;
+                    }
+                    > span:last-of-type {
+                        border: 1px solid blue;
+                        color: blue;
+                    }
+                }
+                b {
+                    font-size: 40px;
+                    color: @baseColor;
+                }
+                sub {
+                    bottom: 0;
+                    color: @baseColor;
+                }
+                &::before,&::after {
+                    content: '';
+                    position: absolute;
+                    left: -5px;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 5px;
+                    background-color: #eee;
+                }
+                &::before {
+                    top: -5px;
+                    box-shadow: 0px -1px 1px #ddd inset;
+                }
+                &::after {
+                    bottom: -5px;
+                    box-shadow: 0px 1px 1px #ddd inset;
+                }
+            }
+            &.active {
+                background-color: @baseColor;
+                color: #fff;
+                .box_right {
+                    b,sub {
+                        color: #fff;
+                    }
+                }
+                &::before {
+                    content: "\e915";
+                    font-family: "wjs";
+                    position: absolute;
+                    left: 0;
+                    top:-5px;
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+}
+// 新闻块
+.wjs_news {
+    padding: 20px;
+    .news_title {
+        font-size: 25px;
+        line-height: 50px;
+        border-bottom: 1px solid #ccc;
+        text-align: center;
+        position: relative;
+        &::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            position: absolute;
+            bottom: -4px;
+            right: -8px;
+        }
+    }
+    .nav-tabs {
+        border-bottom: none;
+        position: relative;
+        li {
+            margin-bottom: 60px;
+            a {
+                margin: 0 auto;
+                border: 0;
+                font-size: 30px;
+                width: 60px;
+                height: 60px;
+                border-radius: 30px;
+                background-color: #ccc;
+                color: #fff;
+                &:hover {
+                    background-color: @baseColor;
+                }
+            }
+            &.active{
+                a,a:hover,a:focus {
+                    background-color: @baseColor;
+                    border: 0;
+                    color: #fff;
+                }
+            }
+        }
+        li:last-child {
+            margin-bottom: 0;
+        }
+        .news_line {
+            width: 1px;
+            height: 100%;
+            border-left: 1px dashed @baseColor;
+            position: absolute;
+            top: 0;
+            left: 30px;
+        }
+        @media screen and (min-width:768px) and (max-width:992px) {
+            li {
+                margin: 20px 30px;
+            }
+        }
+        @media screen and (max-width:768px) {
+           li {
+            margin: 20px 0px;
+            width: 25%;
+           }
+        }
+    }
+    .tab-content {
+        li {
+            line-height: 60px;
+        }
+    }
+}
+
+
+// 底部
+.wjs_footer {
+    height: 400px;
+}
